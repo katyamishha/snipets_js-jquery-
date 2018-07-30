@@ -1,0 +1,28 @@
+&rowTpl=`rowTpl`
+
+<li[+wf.id+][+wf.classes+] typeof="v:Breadcrumb" >
+<a href="[+wf.link+]" rel="v:url" property="v:title" title="[+wf.title+]" [+wf.attributes+]>
+     [+wf.linktext+]
+</a>
+[+wf.wrapper+]</li>
+
+
+<div itemscope itemtype="http://schema.org/Product">
+
+<span itemprop="name">Содержимое H1</span>
+
+<span itemprop="brand">Содержимое строки «Производитель, марка и т.д.»</span>
+
+<span itemprop="model">Номер модели (если есть)</span>
+
+<img itemprop="image" src="Ссылка на изображение товара" />
+
+<span itemprop="description">Текстовое описание товара, которое предоставляет продавец  </span>
+
+<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+<meta itemprop="priceCurrency" content="RUB" />
+
+<span itemprop="price">Цена товара</span>
+
+<span itemprop="seller">Продавец товара</span>
