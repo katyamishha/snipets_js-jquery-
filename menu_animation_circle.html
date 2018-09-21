@@ -1,0 +1,70 @@
+Подключить файл snap.svg-min.js
+добавить скрипт, в котором заменяем ul.nav_menu>li на наши данные
+     <script>
+            $(document).ready(function() {
+                $('ul.nav_menu>li').hover(function() {
+    
+                    var svg = Snap(this);
+                    var circle = svg.select('circle');
+                    circle.attr({
+                            fill: ($('.headerbox').hasClass('winscroll') ? 'rgba(255,255,255,.3)' : '#f9eb68')
+                        })
+                        .animate({
+                                r: $(this).outerWidth() / 1.2,
+                                fill: ($('.headerbox').hasClass('winscroll') ? 'rgba(249,235,104,.8)' : 'rgba(255,255,255,.3)')
+                            },
+                            400, mina.easeinout);
+    
+    
+                }, function() {
+    
+                    var svg = Snap(this);
+                    var circle = svg.select('circle');
+                    circle.animate({
+                        r: 0,
+                        fill: ($('.headerbox').hasClass('winscroll') ? 'rgba(255,255,255,.3)' : '#f9eb68')
+                    }, 500, mina.easeinout);
+    
+                });
+            });
+        </script>
+        
+        
+        так оформляем меню
+        
+        <ul class="nav_menu">
+                <li><a href="#"><span>Пицца</span><svg><circle cx="50%" cy="50%" r="0"></circle><defs></defs></svg></a></li>
+                <li><a href="#"><span>Блюда на мангале</span><svg><circle cx="50%" cy="50%" r="0"></circle><defs></defs></svg></a></li>
+                <li><a href="#"><span>Кулинария</span><svg><circle cx="50%" cy="50%" r="0"></circle><defs></defs></svg></a></li>
+                <li><a href="#"><span>Салаты</span><svg><circle cx="50%" cy="50%" r="0"></circle><defs></defs></svg></a></li>
+                <li><a href="#"><span>Пекарня</span><svg><circle cx="50%" cy="50%" r="0"></circle><defs></defs></svg></a></li>
+                <li><a href="#"><span>Кофейня</span><svg><circle cx="50%" cy="50%" r="0"></circle><defs></defs></svg></a></li>
+                <li><a href="#"><span>Напитки</span><svg><circle cx="50%" cy="50%" r="0"></circle><defs></defs></svg></a></li>
+            </ul>
+            
+            добавляем стили
+            
+            .bottom_nav .uk-navbar-nav>li>a {
+                height: auto;
+                text-transform: initial;
+                color: #fff;
+                position: relative;
+                padding: 30px 40px;
+                border: none;
+                height: 100%;
+            }
+            .bottom_nav .uk-navbar-nav>li>a span{
+                z-index: 5;
+                position: static;
+            }
+            .bottom_nav .uk-navbar-nav>li>a svg {
+                fill: #f9eb68;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+        
+        
